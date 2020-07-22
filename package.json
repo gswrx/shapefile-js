@@ -1,11 +1,11 @@
 {
   "name": "shpjs",
   "version": "3.5.0",
-  "description": "A binary shapefile loader, for javascript. Not many caveats",
+  "description": "A binary shapefile loader, for javascript. Not many caveats. GSWRX edited for type detection.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/calvinmetcalf/shapefile-js.git"
+    "url": "git://github.com/gswrx/shapefile-js.git"
   },
   "scripts": {
     "test": "mocha ./test/test.js",
