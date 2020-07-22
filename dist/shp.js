@@ -5,7 +5,14 @@ var Buffer = require('buffer').Buffer
 module.exports = binaryAjax;
 function binaryAjax(url){
 	return new Promise(function(resolve,reject){
-		var type = url.slice(-3);
+    var regexPattern = /\.([0-9a-z]+)(?:[\?#]|$)/i;
+    var typeMatch = url.match(regexPattern);
+    var type;
+    if (typeMatch && typeMatch.length > 1) {
+      type = typeMatch[1];
+    } else {
+      reject(); // Incorrect match
+    }
 		var ajax = new XMLHttpRequest();
 		ajax.open('GET',url,true);
 		if(type !== 'prj' && type !== 'cpg'){
